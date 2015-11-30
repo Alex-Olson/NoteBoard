@@ -5,13 +5,17 @@ import java.util.Date;
 
 public class Note {
 
-    private Date mDate;
-
-    public Note(){
-        mDate = new Date();
+    public void setDate(String mDate) {
+        this.mDate = mDate;
     }
 
-    public Date getDate() {
+    private String mDate;
+
+    public Note(){
+        mDate = new Date().toString();
+    }
+
+    public String getDate() {
         return mDate;
     }
 

@@ -13,11 +13,15 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class NoteBoard extends SingleFragmentActivity {
+import java.util.Date;
+
+public class NoteActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment(){
-        return new NoteFragment();
+        String date = getIntent().getSerializableExtra(NoteFragment.EXTRA_NOTE_DATE).toString();
+
+        return NoteFragment.newInstance(date);
     }
 
 
@@ -28,6 +32,7 @@ public class NoteBoard extends SingleFragmentActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
